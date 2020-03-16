@@ -67,14 +67,15 @@ df["Nombre de but"] = df["Meilleur buteur"].apply(with_column_but)
 
 
 del df["Meilleur buteur"]#elle est en trop car je l'ai rename
+#print(df.head(2))
+#print(teams[2])
+
+#df.to_csv("teams.csv", sep=",")
+#
+#craftcans = pd.read_csv("teams.csv", sep=",", encoding="latin1")
+#print(craftcans.head(5))
 #print(df.head(3))
-
-df.to_csv("teams.csv", sep=",")
-
-craftcans = pd.read_csv("teams.csv", sep=",", encoding="latin1")
-print(craftcans.head(5))
-print(df.head(3))
-
+#
 
 
 

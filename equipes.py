@@ -15,4 +15,20 @@ tab = html_soup.findAll("table", class_="min_width sortable stats_table", id="st
 body = tab[0].findAll("tbody")
 rows = body[0].findAll("tr")
 print(len(rows))
-#PROBLEME AVEC RECUPERATION DU TABLEAU 
+teams = []
+for row in rows:
+    cells = row.findAll("a")
+    cells2 = row.findAll("td")
+    
+    try:
+        teams_entry = {
+                "Nom d'équipe": cells[0].text,
+                "Match joué" : cells2[1].text,
+                "Buts marqués" : cells2[4].text,
+                    }
+        teams.append(teams_entry)
+    except ValueError:
+            print("Ouch!")
+df = pd.DataFrame(teams)
+
+print(df.head(24))
