@@ -11,9 +11,9 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas as pd
 
-p1=pd.read_csv("player1.csv", sep=',', encoding="latin1")
+p1=pd.read_csv("players1.csv", sep=',', encoding="latin1")
 
-p2=pd.read_csv("player2.csv", sep=',', encoding="latin1")
+p2=pd.read_csv("players2.csv", sep=',', encoding="latin1")
 
 p3=pd.read_csv("players3.csv", sep=',', encoding="latin1")
 
@@ -22,7 +22,30 @@ p4=pd.read_csv("players4.csv", sep=',', encoding="latin1")
 p5=pd.read_csv("players5.csv", sep=',', encoding="latin1")
 
 tot = pd.concat([p1, p2,p3,p4,p5],sort=False)
-df =tot[tot.columns[1:21]]
-df.columns = ['Player','Nation','Pos','Squad', 'Age','Born','MP',	'Starts',	'Min',	'Goals',	'Assists',	'PenalKick','PKattempt',	'CardY',	'CardR',	'Goals/90',	'Ast/90',	'G+A/90',	'G-PK/90',	'G+A-PK']
 
-df.to_csv("EnglishPlayer2.csv")
+d =tot[tot.columns[1:21]]
+d.columns = ['Player','Nation','Pos','Squad', 'Age','Born','MP', 'Starts',	'Min',	'Goals',	'Assists',	'PenalKick','PKattempt',	'CardY',	'CardR',	'Goals/90',	'Ast/90',	'G+A/90',	'G-PK/90',	'G+A-PK']
+d.drop(0, inplace = True)
+
+
+df = pd.DataFrame(d)
+
+# Récupérer le caractère \ par le code ascii
+code =92
+carac = chr(code)
+
+# Ajoute dans le tableau play le nom des joueurs après néttoyage
+players = df["Player"]
+play = []
+for player in players:
+    pos = player.index(carac)
+    player = player[:pos]
+    play.append(player)
+    
+
+# suprime la liste non nétoyer pour en créer une du meme nom mais nettoyé
+del df["Player"]
+df.insert(0,"Player", play)
+
+
+df.to_csv("EnglishPlayer.csv")
