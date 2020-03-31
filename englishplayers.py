@@ -22,6 +22,7 @@ p4=pd.read_csv("players4.csv", sep=',', encoding="latin1")
 p5=pd.read_csv("players5.csv", sep=',', encoding="latin1")
 
 tot = pd.concat([p1, p2,p3,p4,p5],sort=False)
-len(tot)
+df =tot[tot.columns[1:21]]
+df.columns = ['Player','Nation','Pos','Squad', 'Age','Born','MP',	'Starts',	'Min',	'Goals',	'Assists',	'PenalKick','PKattempt',	'CardY',	'CardR',	'Goals/90',	'Ast/90',	'G+A/90',	'G-PK/90',	'G+A-PK']
 
-tot.to_csv("EnglishPlayer.csv")
+df.to_csv("EnglishPlayer2.csv")
