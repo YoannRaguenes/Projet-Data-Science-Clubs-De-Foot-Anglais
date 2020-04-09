@@ -7,3 +7,18 @@ Creation of a dataset of the different clubs of the football as well as players.
 - Dataset with all english club: https://drive.google.com/file/d/1JGS8Pp27hKFLnxQ5RrKtmbdaoJiUxYdU/view?usp=sharing
 
 
+Pos -- GK - Goalkeepers
+DF - Defenders
+MF - Midfielders
+FW - Forwards
+FB - Fullbacks
+LB - Left Backs
+RB - Right Backs
+CB - Center Backs
+DM - Defensive Midfielders
+CM - Central Midfielders
+WM - Wide Midfielders
+LW - Left Wingers
+RW - Right Wingers
+AM - Attacking Midfielders
+
