@@ -9,6 +9,8 @@ Creation of a dataset of the different clubs of the football as well as players.
 
 - Dataset with all english club: https://drive.google.com/file/d/1JGS8Pp27hKFLnxQ5RrKtmbdaoJiUxYdU/view?usp=sharing
 
+-Dataset with all the english player with their market value and stats: https://drive.google.com/file/d/1fww6MIE_wSmijkiGC1YNY0-AnyOu7kmr/view?usp=sharing
+
 
 - Pos -- GK - Goalkeepers
 - DF - Defenders
